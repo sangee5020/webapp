@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="margin: 0;padding: 0;height: 100vh;background-image: url('{% static 'images/regback.jpg' %}'); background-size: cover;
+             background-position: center center;align-items: center;
+            justify-content: center;">
+<p style="text-align: center;">
+
+<h1 style="text-align:center;color:brown"> Registration Form</h1>
+<form action=" " method="post" style="text-align:center">
+    {% csrf_token %}
+    <label style="color:gray">Enter UserId</label>
+    <input type="text" name="username" placeholder="enter your username" style="padding: 8px; margin-bottom: 16px; box-sizing: border-box; width: 30%;"><br>
+    <label style="color:gray">Enter FIRST_NAME</label>
+    <input type="text" name="firstname" placeholder="name" style="padding: 8px; margin-bottom: 16px; box-sizing: border-box; width: 30%;"><br>
+    <label style="color:gray">Enter LAST_NAME</label>
+    <input type="text" name="lastname" placeholder="lastname" style="padding: 8px; margin-bottom: 16px; box-sizing: border-box; width: 30%;"><br>
+    <label style="color:gray">Enter Your Password</label>
+    <input type="password" name="passwrd" placeholder="password" style="padding: 8px; margin-bottom: 16px; box-sizing: border-box; width: 30%;"><br>
+    <label style="color:gray">Confirm Password</label><label style="color:red;font-size:7"> *Password must be same</label>
+    <input type="password" name="cnfpasswrd" placeholder="repeat-password" style="padding: 8px; margin-bottom: 16px; box-sizing: border-box; width: 30%;"><br>
+    <label style="color:gray">Enter Your mailid</label>
+    <input type="email" name="email" placeholder="email id" style="padding: 8px; margin-bottom: 16px; box-sizing: border-box; width: 30%;"><br>
+    <input type="submit" style="color:green">
+
+</form>
+{% for i in messages %}
+{{i}}
+{% endfor %}
+
+</body>
+</html>
